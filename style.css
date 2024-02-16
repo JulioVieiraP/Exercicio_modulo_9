@@ -57,12 +57,12 @@ button {
     cursor: pointer;
 }
 
-#Botao-adicionar {
+.Botao-adicionar {
     background-color: #4caf50;
     color: #fff;
 }
 
-#Botao-remover {
+.Botao-remover {
     background-color: #f44336;
     color: #fff;
 }

@@ -1,31 +1,18 @@
-$(document).ready(function () {
-    $('#Botao-adicionar').click(adicionarTarefa);
-    $('#input').keypress(function(event){
-        if(event.which === 13){
-            adicionarTarefa();
+$(document).ready(function(){
+    $('#taskForm').submit(function(event){
+        event.preventDefault();
+        var taskName = $('#taskInput').val();
+        if(taskName.trim() !== ''){
+            $('#taskList').append('<li>' + taskName + '</li>');
+            $('#taskInput').val('');
         }
     });
 
-    function adicionarTarefa(){
-        var tarefa = $('#input').val().trim();
-        if(tarefa !== "") {
-            var tarefasExistentes = [];
-            $('ul li').each(function() {
-                tarefasExistentes.push($(this).text().trim());
-            });
+    $('#taskList').on('click', 'li', function(){
+        $(this).toggleClass('completed');
+    });
 
-            if (tarefasExistentes.includes(tarefa)) {
-                alert("Esta tarefa já está na lista!");
-            } else {
-                $('ul').append('<li>' + tarefa + '</li>');
-                $('#input').val("");
-            }
-        } else {
-            alert("Por favor, insira uma tarefa válida.");
-        }
-    }
-
-    $('#Botao-remover').click(function(){
-        $('ul').empty();
+    $('.Botao-remover').click(function(){
+        $('#taskList').empty();
     });
 });
