@@ -85,6 +85,11 @@ ul li {
     align-items: center;
 }
 
+.completed {
+    text-decoration: line-through;
+    color: #4caf50;
+}
+
 footer{
     margin-top: auto;
     display: flex;
