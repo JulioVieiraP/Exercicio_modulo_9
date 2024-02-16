@@ -78,6 +78,7 @@ ul li {
     padding: 10px;
     background-color: #282828;
     color: #fff;
+    cursor: pointer;
     border-radius: 5px;
     margin-bottom: 5px;
     display: flex;
