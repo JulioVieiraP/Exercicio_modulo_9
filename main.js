@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $('#taskForm').submit(function(event){
-        event.preventDefault();
+    $('#taskForm').submit(function(e){
+        e.preventDefault();
         var taskName = $('#taskInput').val();
         if(taskName.trim() !== ''){
             $('#taskList').append('<li>' + taskName + '</li>');
